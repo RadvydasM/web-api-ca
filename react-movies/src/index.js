@@ -43,13 +43,14 @@ const App = () => {
               <Route path="/signup" element={ <SignUpPage /> } />
               <Route path="/movies/:id" element={<MoviePage />} />
               <Route path="/movies/top_rated" element={<TopRatedMoviesPage />} />
+              <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
+              <Route path="/movies/playlist" element={<MoviePlaylistPage />} />
+              <Route path="/reviews/form" element={<AddMovieReviewPage />} />
+              <Route path="/reviews/:id" element={<MovieReviewPage />} />
               <Route path="/" element={<HomePage />} />
               <Route element={<ProtectedRoutes />}>
                 <Route path="/movies/" element={<MoviePage />} />
-                <Route path="/movies/playlist" element={<MoviePlaylistPage />} />
                 <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
-                <Route path="/reviews/form" element={<AddMovieReviewPage />} />
-                <Route path="/reviews/:id" element={<MovieReviewPage />} />
               </Route>
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
