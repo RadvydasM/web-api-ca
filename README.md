@@ -1,32 +1,30 @@
 # Assignment 2 - Web API.
 
-Name: Your Name
+Name: Radvydas Mikalauskas
 
 ## Features.
 
 A bullet-point list of the ADDITIONAL features you have implemented in the API **THAT WERE NOT IN THE LABS** (or modifications to existing features)
  
- + Feature 1 
- + Feature 2 
- + Feature 3 
- + etc
+ + Attempted implementation of pagination (didn't get it to work in the end)
+ + Added /movies/favorites as protected route
+ + Added /movies/playlist as protected route
+ + Styled Login and SignUp pages
+ + Fetching reviews from TMDB using /reviews/:id parameterised route
 
 ## Setup requirements.
 
-[ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
+Go into movies api folder and run the npm run dev to connect to the MongoDB server. Go into the react-movies folder and run the npm start to start the react app.
 
 ## API Configuration
 
-Describe any configuration that needs to take place before running the API. For example, creating an `.env` file and what variables to put in it. Give an example of how this might be done.
-
-REMEMBER: DON'T PUT YOUR OWN USERNAMES/PASSWORDS/AUTH KEYS IN THE README OR ON GITHUB, just placeholders as indicated below:
-
+type everything as described below: fill in the username, password, AppName and key placeholders as well as the key placeholder on the react app.
 ______________________
 NODEENV=development
 PORT=8080
-HOST=
-mongoDB=YourMongoURL
-seedDb=true
+HOST=localhost
+mongoDB=mongodb+srv://<username>:<password>@tasky.n306x.mongodb.net/?retryWrites=true&w=majority&appName=<AppName>
+TMDB_KEY=<key>
 secret=YourJWTSecret
 ______________________
 
@@ -34,20 +32,17 @@ ______________________
 Give an overview of your web API design, perhaps similar to the following: 
 
 - /api/movies | GET | Gets a list of movies 
-- /api/movies/{movieid} | GET | Gets a single movie 
-- /api/movies/{movieid}/reviews | GET | Get all reviews for movie 
-- /api/movies/{movieid}/reviews | POST | Create a new review for Movie 
-
-If you have your API design on an online platform or graphic, please link to it (e.g. [Swaggerhub](https://app.swaggerhub.com/)).
+- /api/user/:id | GET | Gets a specified user
+- /api/movie/:id | Get | Gets a specified movie
 
 ## Security and Authentication
 
-Give details of authentication/security implemented on the API (e.g. passport/sessions). Indicate which routes are protected.
+The user can view the upcoming, top rated and now_playing pages without authentication. The user is required to Login to access the protected favorites and playlist routes. If the user doesn't have an account they must Sign Up and Login instead.
 
 ## Integrating with React App
 
-Describe how you integrated your React app with the API. List the views that use your Web API instead of the TMDB API. Describe any other updates to the React app from Assignment One.
+The react app is integrated with the API to access and store the movies and the users. Additionally I have attempted to implement pagination.
 
 ## Independent learning (if relevant)
 
-Briefly explain any non-standard features developed for the app.   
+N/A 
